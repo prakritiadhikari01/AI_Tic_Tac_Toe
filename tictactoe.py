@@ -266,7 +266,10 @@ def main():
             if move is not None:
                 row,col=move
                 game.make_move(row,col)
-
+            #shows winning line immediately after winning+
+            if game.isover():
+                game.running = False
+                pygame.display.update()
 
         pygame.display.update()
 main()
